@@ -23,6 +23,7 @@ describe('ReactMultiEmail autoFocus prop Test', () => {
     );
 
     const input = getByRole('textbox');
+    //! 验证一个元素是否有焦点
     expect(document.activeElement).toBe(input);
   });
 

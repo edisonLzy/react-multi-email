@@ -5,6 +5,7 @@ import React from 'react';
 afterEach(cleanup);
 
 it('ReactMultiEmail onChangeInput TEST', async () => {
+  // jest.fn() creates a mock function 并 模拟起实现
   const mockhandleChangeInput = jest.fn().mockImplementation(value => value);
 
   const { getByRole } = render(

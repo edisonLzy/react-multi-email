@@ -32,6 +32,7 @@ it('allowDuplicate = true', async () => {
   }
 
   const emailsWrapper = document.querySelector('.data-labels');
+  // childElementCount: The number of child elements of this element.
   expect(emailsWrapper?.childElementCount)?.toBe(num);
 });
 
@@ -65,6 +66,8 @@ it('allowDuplicate = undefined', async () => {
 
 it('allowDuplicate = false, case sensitive', async () => {
   const { getByRole } = render(createReactMultiEmail(false));
+
+  // 根据 accessibility role 获取元素, 这里获取到的就是input元素
   const textbox = getByRole('textbox');
 
   const num = 3;

@@ -1,6 +1,6 @@
 import * as React from 'react';
 import styled from '@emotion/styled';
-import { ReactMultiEmail } from '../react-multi-email';
+import { ReactMultiEmail, isEmail } from '../react-multi-email';
 import { Button } from 'antd';
 
 interface Props {}
@@ -28,6 +28,9 @@ function BasicExample(props: Props) {
           onKeyUp={evt => {
             console.log(evt);
           }}
+          validateEmail={async email => {
+            return isEmail(email)
+          }}
           getLabel={(email, index, removeEmail) => {
             return (
               <div data-tag key={index}>
@@ -46,7 +49,6 @@ function BasicExample(props: Props) {
         <h4>react-multi-email value</h4>
         <h3>Focused: {focused ? 'true' : 'false'}</h3>
         <p>{emails.join(', ') || 'empty'}</p>
-
         <Button onClick={() => setEmails(['test', 'tt', 'test@gmail.com'])}>
           {`setEmails("['test', 'tt', 'test@gmail.com']")`}
         </Button>

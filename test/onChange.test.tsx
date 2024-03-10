@@ -23,6 +23,8 @@ describe('ReactMultEmail onChange TEST', () => {
         }}
       />,
     );
+
+    // https://developer.mozilla.org/en-US/docs/Web/Accessibility/ARIA/Roles/textbox_role
     const input = getByRole('textbox');
 
     fireEvent.change(input, { target: { value: 'test@example.com' } });

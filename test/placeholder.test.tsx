@@ -22,6 +22,7 @@ describe('ReactMultiEmail placeholder TEST', () => {
       />,
     );
 
+    // [data-placeholder]: 选中含有 data-placeholder 属性的元素
     const targetElem = document.querySelector('[data-placeholder~="true"]');
 
     expect(screen.getByDataPlaceholder('true')).toEqual(targetElem);

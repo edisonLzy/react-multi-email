@@ -6,6 +6,7 @@ afterEach(cleanup);
 
 describe('ReactMultEmail getLabel TEST', () => {
   it('getLabel is called on entering new valid email', async () => {
+    // jest.fn() creates a mock function
     const getLabel = jest.fn();
 
     const { getByRole } = render(<ReactMultiEmail getLabel={getLabel} />);
